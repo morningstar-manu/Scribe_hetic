@@ -9,7 +9,7 @@ Scribe est un outil en ligne de commande qui transforme un enregistrement audio
 2. Un modèle Speech-to-Text (Groq) transcrit l'audio en texte brut.
 3. Un LLM (Groq) reformule ce texte en compte rendu : titre, résumé, points clés, décisions/actions.
 
-## Installation
+## 1 Installation
 
 ```bash
 python -m venv .venv
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 cp .env.example .env   # puis renseigner GROQ_API_KEY
 ```
 
-### Q2 — Choix des modèles
+### 2 Choix des modèles
 
 | Rôle | Modèle | Justification |
 |------|--------|---------------|
@@ -28,7 +28,7 @@ cp .env.example .env   # puis renseigner GROQ_API_KEY
 
 
 
-### Q3 — Que renvoie l'API STT en plus du texte ?
+### 3 Que renvoie l'API STT en plus du texte ?
 
 Avec `response_format="verbose_json"`, Groq renvoie notamment :
 - la **langue détectée** (`language`)
@@ -39,13 +39,13 @@ Utile pour une évolution de Scribe : sous-titres, navigation par chapitres,
 résumé par segment temporel, détection automatique de la langue.
 
 
-### Q4 — Température
+### 4 Température
 
 Température **0.2** (basse) : on veut un compte rendu fidèle à la transcription,
 pas créatif. Une température élevée augmenterait le risque d'inventer des décisions
 ou des actions absentes de l'audio.
 
-### Q5 — Prompt système et tokens en cache
+### 5 Prompt système et tokens en cache
 
 Le prompt système est renvoyé à chaque requête et consomme des tokens d'entrée.
 Les providers peuvent mettre en cache les préfixes identiques (dont le system prompt)
