@@ -10,7 +10,7 @@ Format de sortie obligatoire (Markdown) :
 # Titre
 
 ## Résumé
-(3 à 5 lignes maximum)
+(3 à 5 lignes maximum, ton formel et professionnel)
 
 ## Points clés
 - point 1
